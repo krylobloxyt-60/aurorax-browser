@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuroraX Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header-band">
+    <div class="logo-container">
+      <div class="aurora-glow"></div>
+      <img src="logo.png" class="logo-img" alt="AuroraX Logo">
+      <div class="brand-text">
+        <span class="brand-name">Aurora<span class="accent-glow">X</span></span>
+        <span class="brand-slogan">Browse Beyond Limits</span>
+      </div>
+    </div>
+    
+    <div class="tabs-container" id="tabsContainer"></div>
+    <button class="new-tab-btn" id="newTabBtn">+</button>
+    
+    <button class="sidebar-toggle-btn" id="toggleBookmarksBtn">🔖 Bookmarks</button>
+    <button class="sidebar-toggle-btn" id="toggleAiBtn">🤖 Aurora Core AI</button>
+  </div>
+
+  <div class="nav-bar">
+    <button class="nav-btn" id="backBtn" disabled>&larr;</button>
+    <button class="nav-btn" id="forwardBtn" disabled>&rarr;</button>
+    <button class="nav-btn" id="refreshBtn">&#x21BB;</button>
+    
+    <select class="engine-select" id="engineSelect">
+      <option value="https://www.google.com/search?q=">Google</option>
+      <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+      <option value="https://www.bing.com/search?q=">Bing</option>
+    </select>
+
+    <input type="text" class="url-input" id="urlInput" placeholder="Search or type a URL...">
+    
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="main-workspace">
+    <div class="sidebar left-sidebar" id="bookmarkSidebar">
+      <h3>AURORA SAVES</h3>
+      <button class="add-bookmark-btn" id="addBookmarkBtn">+ Add Current Page</button>
+      <div class="bookmarks-list" id="bookmarksList"></div>
+    </div>
+
+    <div class="view-container" id="viewContainer"></div>
+
+    <div class="sidebar right-sidebar" id="aiSidebar">
+      <h3>AURORA CORE AI AGENT</h3>
+      <div class="ai-chat-output" id="aiChatOutput">
+        <div class="ai-msg">Aurora Core AI active. Ready to index and summarize active web view.</div>
+      </div>
+      <div class="ai-input-container">
+        <input type="text" id="aiInput" placeholder="Ask Aurora AI about this page...">
+        <button id="sendAiBtn">&rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-tooltip" id="customTooltip">Reading page structure...</div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

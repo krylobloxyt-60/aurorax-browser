@@ -1,0 +1,41 @@
+{
+  "name": "aurorax-browser",
+  "version": "1.0.0",
+  "description": "AuroraX - Browse Beyond Limits. A premium, high-efficiency futuristic web browser.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "web:link": "npx vercel link --yes --project aurorax-browser-aurorax-done-team-a --cwd aurorax-web",
+    "web:deploy": "npx vercel --cwd aurorax-web --prod --yes",
+    "build:all": "npm run dist && npm run web:deploy"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.7"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.auroralabs.aurorax",
+    "productName": "AuroraX",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "krylobloxyt-60",
+      "repo": "aurorax-browser"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ]
+  }
+}
